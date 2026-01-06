@@ -1,0 +1,486 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Market Scanner - Livermore Swing Setups</title>
+    <meta http-equiv="refresh" content="300">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0a0e27;
+            color: #ffffff;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .header-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .data-source {
+            background: rgba(255,255,255,0.2);
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 0.9em;
+        }
+        
+        .section {
+            background: #1a1f3a;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+        
+        .section-header {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .section-header.big-bang {
+            color: #00ff00;
+        }
+        
+        .section-header.almost-ready {
+            color: #ffaa00;
+        }
+        
+        .section-header.get-ready {
+            color: #ffff00;
+        }
+        
+        .section-header.forming {
+            color: #00ccff;
+        }
+        
+        .pair-card {
+            background: #252b4a;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-left: 5px solid;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .pair-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        
+        .pair-card.big-bang {
+            border-color: #00ff00;
+            background: linear-gradient(90deg, #252b4a 0%, #1a3a1a 100%);
+        }
+        
+        .pair-card.almost-ready {
+            border-color: #ffaa00;
+        }
+        
+        .pair-card.get-ready {
+            border-color: #ffff00;
+        }
+        
+        .pair-card.forming {
+            border-color: #00ccff;
+        }
+        
+        .pair-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .pair-name {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        
+        .pair-probability {
+            font-size: 2em;
+            font-weight: bold;
+        }
+        
+        .pair-status {
+            font-size: 1.2em;
+            padding: 5px 15px;
+            border-radius: 20px;
+            background: rgba(255,255,255,0.1);
+        }
+        
+        .pair-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .detail-item {
+            background: rgba(0,0,0,0.2);
+            padding: 12px;
+            border-radius: 8px;
+        }
+        
+        .detail-label {
+            font-size: 0.85em;
+            color: #aaaaaa;
+            margin-bottom: 5px;
+        }
+        
+        .detail-value {
+            font-size: 1.1em;
+            font-weight: bold;
+        }
+        
+        .detail-value.bullish {
+            color: #00ff00;
+        }
+        
+        .detail-value.bearish {
+            color: #ff3333;
+        }
+        
+        .no-setups {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+            font-size: 1.2em;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #666;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8em;
+            }
+            
+            .pair-details {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔍 MARKET SCANNER - Livermore Swing Setups</h1>
+            <div class="header-info">
+                <div>Last Scan: <strong>2026-01-05 23:14:33</strong></div>
+                <div class="data-source">
+                    📊 Data Source: <strong>MT5</strong>
+                </div>
+                <div>Auto-refresh: <strong>✅ ON</strong></div>
+            </div>
+        </div>
+        
+        
+        <div class="section">
+            <div class="section-header big-bang">💥 BIG BANG - ENTER NOW!</div>
+            
+            <div class="pair-card big-bang">
+                <div class="pair-header">
+                    <div class="pair-name">GBPUSD</div>
+                    <div class="pair-probability">100%</div>
+                    <div class="pair-status">🟠 Almost ready - waiting for 15M confirmation</div>
+                </div>
+                
+                <div class="pair-details">
+                    <div class="detail-item">
+                        <div class="detail-label">Direction</div>
+                        <div class="detail-value bullish">LONG</div>
+                    </div>
+                    
+                    <div class="detail-item">
+                        <div class="detail-label">Entry</div>
+                        <div class="detail-value">1.35381</div>
+                    </div>
+                    
+                    <div class="detail-item">
+                        <div class="detail-label">Stop Loss</div>
+                        <div class="detail-value">1.33685</div>
+                    </div>
+                    
+                    <div class="detail-item">
+                        <div class="detail-label">Target (+3R)</div>
+                        <div class="detail-value">1.40468</div>
+                    </div>
+                    
+                    <div class="detail-item">
+                        <div class="detail-label">Pair Type</div>
+                        <div class="detail-value">MIXED</div>
+                    </div>
+                    
+                    <div class="detail-item">
+                        <div class="detail-label">HTF Momentum</div>
+                        <div class="detail-value">99%</div>
+                    </div>
+                    
+                    <div class="detail-item">
+                        <div class="detail-label">HTF Aligned</div>
+                        <div class="detail-value">✅</div>
+                    </div>
+                    
+                    <div class="detail-item">
+                        <div class="detail-label">15M Confirmed</div>
+                        <div class="detail-value">⏳</div>
+                    </div>
+                    
+                    <div class="detail-item">
+                        <div class="detail-label">Time at Level</div>
+                        <div class="detail-value">252 bars</div>
+                    </div>
+                    
+                    <div class="detail-item">
+                        <div class="detail-label">ETA to Entry</div>
+                        <div class="detail-value">Ready NOW!</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pair-card big-bang">
+                <div class="pair-header">
+                    <div class="pair-name">AUDUSD</div>
+                    <div class="pair-probability">100%</div>
+                    <div class="pair-status">🟠 Almost ready - waiting for 15M confirmation</div>
+                </div>
+                
+                <div class="pair-details">
+                    <div class="detail-item">
+                        <div class="detail-label">Direction</div>
+                        <div class="detail-value bullish">LONG</div>
+                    </div>
+                    
+                    <div class="detail-item">
+                        <div class="detail-label">Entry</div>
+                        <div class="detail-value">0.67126</div>
+                    </div>
+                    
+                    <div class="detail-item">
+                        <div class="detail-label">Stop Loss</div>
+                        <div class="detail-value">0.66286</div>
+                    </div>
+                    
+                    <div class="detail-item">
+                        <div class="detail-label">Target (+3R)</div>
+                        <div class="detail-value">0.69645</div>
+                    </div>
+                    
+                    <div class="detail-item">
+                        <div class="detail-label">Pair Type</div>
+                        <div class="detail-value">MIXED</div>
+                    </div>
+                    
+                    <div class="detail-item">
+                        <div class="detail-label">HTF Momentum</div>
+                        <div class="detail-value">99%</div>
+                    </div>
+                    
+                    <div class="detail-item">
+                        <div class="detail-label">HTF Aligned</div>
+                        <div class="detail-value">✅</div>
+                    </div>
+                    
+                    <div class="detail-item">
+                        <div class="detail-label">15M Confirmed</div>
+                        <div class="detail-value">⏳</div>
+                    </div>
+                    
+                    <div class="detail-item">
+                        <div class="detail-label">Time at Level</div>
+                        <div class="detail-value">215 bars</div>
+                    </div>
+                    
+                    <div class="detail-item">
+                        <div class="detail-label">ETA to Entry</div>
+                        <div class="detail-value">Ready NOW!</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pair-card big-bang">
+                <div class="pair-header">
+                    <div class="pair-name">XAGUSD</div>
+                    <div class="pair-probability">93%</div>
+                    <div class="pair-status">💥 ENTER NOW!</div>
+                </div>
+                
+                <div class="pair-details">
+                    <div class="detail-item">
+                        <div class="detail-label">Direction</div>
+                        <div class="detail-value bullish">LONG</div>
+                    </div>
+                    
+                    <div class="detail-item">
+                        <div class="detail-label">Entry</div>
+                        <div class="detail-value">76.57900</div>
+                    </div>
+                    
+                    <div class="detail-item">
+                        <div class="detail-label">Stop Loss</div>
+                        <div class="detail-value">62.93929</div>
+                    </div>
+                    
+                    <div class="detail-item">
+                        <div class="detail-label">Target (+3R)</div>
+                        <div class="detail-value">117.49814</div>
+                    </div>
+                    
+                    <div class="detail-item">
+                        <div class="detail-label">Pair Type</div>
+                        <div class="detail-value">TRENDING</div>
+                    </div>
+                    
+                    <div class="detail-item">
+                        <div class="detail-label">HTF Momentum</div>
+                        <div class="detail-value">86%</div>
+                    </div>
+                    
+                    <div class="detail-item">
+                        <div class="detail-label">HTF Aligned</div>
+                        <div class="detail-value">✅</div>
+                    </div>
+                    
+                    <div class="detail-item">
+                        <div class="detail-label">15M Confirmed</div>
+                        <div class="detail-value">✅</div>
+                    </div>
+                    
+                    <div class="detail-item">
+                        <div class="detail-label">Time at Level</div>
+                        <div class="detail-value">114 bars</div>
+                    </div>
+                    
+                    <div class="detail-item">
+                        <div class="detail-label">ETA to Entry</div>
+                        <div class="detail-value">Ready NOW!</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        
+        <div class="section">
+            <div class="section-header almost-ready">🟠 ALMOST READY - Prepare</div>
+            <div class="no-setups">No setups in this category</div>
+        </div>
+
+        
+        <div class="section">
+            <div class="section-header get-ready">🟡 GET READY - Building</div>
+            <div class="no-setups">No setups in this category</div>
+        </div>
+
+        
+        <div class="section">
+            <div class="section-header forming">🔵 FORMING - Early Stage</div>
+            
+            <div class="pair-card forming">
+                <div class="pair-header">
+                    <div class="pair-name">XAUUSD</div>
+                    <div class="pair-probability">50%</div>
+                    <div class="pair-status">🔵 FORMING - Early stage</div>
+                </div>
+                
+                <div class="pair-details">
+                    <div class="detail-item">
+                        <div class="detail-label">Direction</div>
+                        <div class="detail-value bullish">LONG</div>
+                    </div>
+                    
+                    <div class="detail-item">
+                        <div class="detail-label">Entry</div>
+                        <div class="detail-value">4448.89000</div>
+                    </div>
+                    
+                    <div class="detail-item">
+                        <div class="detail-label">Stop Loss</div>
+                        <div class="detail-value">4178.80857</div>
+                    </div>
+                    
+                    <div class="detail-item">
+                        <div class="detail-label">Target (+3R)</div>
+                        <div class="detail-value">5259.13429</div>
+                    </div>
+                    
+                    <div class="detail-item">
+                        <div class="detail-label">Pair Type</div>
+                        <div class="detail-value">TRENDING</div>
+                    </div>
+                    
+                    <div class="detail-item">
+                        <div class="detail-label">HTF Momentum</div>
+                        <div class="detail-value">60%</div>
+                    </div>
+                    
+                    <div class="detail-item">
+                        <div class="detail-label">HTF Aligned</div>
+                        <div class="detail-value">⚠️</div>
+                    </div>
+                    
+                    <div class="detail-item">
+                        <div class="detail-label">15M Confirmed</div>
+                        <div class="detail-value">⏳</div>
+                    </div>
+                    
+                    <div class="detail-item">
+                        <div class="detail-label">Time at Level</div>
+                        <div class="detail-value">108 bars</div>
+                    </div>
+                    
+                    <div class="detail-item">
+                        <div class="detail-label">ETA to Entry</div>
+                        <div class="detail-value">Within 10 hours (0 day)</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        
+        <div class="footer">
+            <p>Livermore Market Scanner | Generated: 2026-01-05 23:14:33</p>
+            <p>Total Setups: 4</p>
+        </div>
+    </div>
+</body>
+</html>
