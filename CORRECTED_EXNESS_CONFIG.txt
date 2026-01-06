@@ -1,0 +1,62 @@
+# ═══════════════════════════════════════════════════════════════════════════════
+# CORRECTED PAIRS LIST FOR EXNESS - WITH "m" SUFFIX
+# Copy lines 7-25 to your config/config.py (replace TRENDING_PAIRS, RANGING_PAIRS, MIXED_PAIRS)
+# ═══════════════════════════════════════════════════════════════════════════════
+
+TRENDING_PAIRS = [
+    # Metals (Safe Haven Trends)
+    "XAUUSDm",   # Gold - Risk-off trends 6+ months
+    "XAGUSDm",   # Silver - Follows gold
+    
+    # Commodities (Supply/Demand Stories)
+    "USOILm",    # WTI Crude Oil - OPEC policy driven
+    "XNGUSDm",   # Natural Gas - Seasonal trends
+    
+    # Indices (Bull/Bear Markets)
+    "US500m",    # S&P 500 - Bull markets last years
+    "USTECm",    # NASDAQ - Tech cycles
+    "US30m",     # Dow Jones
+    
+    # Crypto (if broker supports)
+    "BTCUSDm",   # Bitcoin - When trends, goes 6+ months
+]
+
+RANGING_PAIRS = [
+    "EURUSDm",   # Classic range-bound
+    "EURGBPm",   # Tight range
+    "USDCHFm",   # Safe haven pair
+]
+
+MIXED_PAIRS = [
+    "GBPUSDm",   # Brexit/BoE policy dependent
+    "AUDUSDm",   # Commodity-linked
+    "USDCADm",   # Oil correlation
+    "NZDUSDm",   # Dairy/commodity cycles
+]
+
+ALL_PAIRS = TRENDING_PAIRS + RANGING_PAIRS + MIXED_PAIRS
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# ALSO UPDATE SYMBOL_MAP (around line 100 in config.py)
+# ═══════════════════════════════════════════════════════════════════════════════
+
+SYMBOL_MAP = {
+    # Standard → Exness format (add "m" to everything!)
+    "XAUUSD": "XAUUSDm",
+    "XAGUSD": "XAGUSDm",
+    "USOIL": "USOILm",
+    "UKOUSD": "UKOUSDm",  # Not available on Exness
+    "NATGAS": "XNGUSDm",
+    "US500": "US500m",
+    "NAS100": "USTECm",
+    "US30": "US30m",
+    "BTCUSD": "BTCUSDm",
+    "EURUSD": "EURUSDm",
+    "GBPUSD": "GBPUSDm",
+    "USDJPY": "USDJPYm",
+    "AUDUSD": "AUDUSDm",
+    "USDCAD": "USDCADm",
+    "USDCHF": "USDCHFm",
+    "NZDUSD": "NZDUSDm",
+    "EURGBP": "EURGBPm",
+}
